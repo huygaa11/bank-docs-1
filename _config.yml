@@ -1,0 +1,5 @@
+pygments: true
+github: [Repository metadata]
+safe: true
+lsi: false
+source: /Users/hugo/work/bank_project/bank_docs/bank-docs-1

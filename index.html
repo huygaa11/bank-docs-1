@@ -1,0 +1,399 @@
+---
+layout: default
+---
+
+	<div class="container">
+		<br>
+		<h4> ГОЛОМТ БАНК </h4>
+
+		<h2> Онлайн худалдааны системийн тест хийх гарын авлага </h2>
+		<b> MTG - SH - Ankhbayar - 1611 </b><br>
+
+		<p>14</p>
+
+		<h3><b>1. ТАНИЛЦУУЛГА </b></h3> 
+		<p>
+			Энэхүү гарын авлага нь Голомт банкны онлайн худалдааны системийн үйл ажиллагааны зарчим, холболт хийх зааварчилгаа болон бусад мэдээллийг агуулсан.
+		</p>
+
+	<figure>
+  		<img src="images/schema.png" alt="schema"  width="700" height="500">
+ 		<figcaption><strong>ЗУРАГ 1 Онлайн худалдааны системийн үйл ажиллагааны схем</strong></figcaption>
+	</figure>
+
+	
+		<br>
+		<p>
+			<strong>Онлайн худалдааны веб</strong> &#8594; Картын мэдээлэл бөглөх, интернет нууц дугаараа оруулах, гүйлгээ илгээх үүрэг бүхий веб хуудас.
+		</p>
+
+		<p>
+			<strong>Веб сервис</strong> &#8594; Картын мэдээлэл болон интернет нууц код шалгах, гүйлгээг онлайн худалдааны систем рүү дамжуулах, гүйлгээний үр дүнг мерчант руу мэдээлэх үүрэг бүхийн сервис. Энэ төрлийн үйл ажиллагааг сервис байдлаар шийдсэн нь боловсруулалт хийх үйл ажиллагааг хурдан болгосон
+		</p>
+
+		<p>
+			<strong>Онлайн худалдааны систем</strong> &#8594; Онлайнаар хийгдэж байгаа бүх гүйлгээг дамжуулах үндсэн систем.
+		</p>
+
+		<p>
+			<strong>Картын систем</strong> &#8594; Гүйлгээ боловсруулж хариу өгөх гол систем. Картаас гүйлгээний дүнг татан авч мерчантын данс руу хуваарилалт хийнэ.
+		</p>
+
+		<p>
+			<strong>Баталгаажуулалт хийх сервис</strong> &#8594; SOAP буюу гүйлгээний баталгаажуулалт хийх сервис нь мерчантуудад гүйлгээ баталгаажуулж эцсийн хариуг өгнө. Вебээр хандаж байсныг сервис болгосоноор тасалдалыг арилгаж, хариу өгөх хугацааг богино болгосон.
+		</p>
+
+		<p>
+		Бидний хувьд шинэ системд дараах зүйлсийг анхаарч хөгжүүлэлтээ хийсэн. Үүнд :
+		<ul>
+			<li>   Гүйлгээ боловсруулах хугацааг богино болгох </li>
+			<li>Системийн үйл ажиллалгааны ачааллаас шалтгаалсан алдааг арилгах</li>
+			<li>Харилцагчийн хэрэглээг хялбар болгох</li>
+				<ul>
+					<li> Зөвхөн картын талаар мэдээлэл бөглөх</li>
+					<li> Ойлгомжтой байх.</li>
+					<li> Байнга төлбөр тооцоо хийдэг хэрэглэгчийн хувьд хэрэглэх картуудаа хадгалах, сонгох засварлах бололцоотой байх. Энэ нь хэрэглэгч дахин дахин картын мэдээллээ бөглөх шаардлагагүй болно.</li>
+			</ul>
+			<li>Гүйлгээний алдааны талаарх мэдээллийг илгээх. Алдааны код болон тайлбарыг мерчант руу мэдээлэх болсноор харилцагч ямар шалтгааны улмаас гүйлгээ нь амжилтгүй болсныг шууд мэдэх бололцоотой болно.</li>
+			<li>Мерчантын хувьд онлайн худалдааны вебийг модуль байдлаар өөрийн веб хуудсанд агуулах боломжтой болгох.</li>
+			<li>Смарт утаснаас хандахад тохиромжтой байдлаар цонхыг зохион байгуулах.</li>
+		</ul>
+	
+	Гүйлгээ боловсруулах хугацааг богино болгохын тулд картын мэдээлэл шалгах, гүйлгээг дамжуулахад зориулан веб сервисийг шинээр хөгжүүлсэн. Ингэснээр гүйлгээ хийх хүсэлт орж ирснээс хариу өгөх хүртлэх хугацаа 2 дахин багассан./Дундажаар 2-3 секунд/
+		</p>
+	<p>
+	Картын мэдээлэл бөглөх хэсэг энэхүү байдлаар харагдах болно.
+	</p>
+
+	<figure>
+  		<img src="images/bogloh_heseg_1.png" alt="schema"  width="380" height="500">
+	</figure>
+
+		<br>
+		<p>
+			Картын мэдээлэл бөглөх хэсэг нь Шинэ картаар төлөх болон Өмнө нь ашиглсан картууд гэсэн 2 сонголттой. Байнга гүйлгээ хийдэг харилцагчийн хувьд өмнө нь гүйлгээ хийсэн картуудаа сонгож гүйлгээ хийх бололцоотой. Энэ нь харилцагчийн үйлдлийг илүү хялбар болгоно. CVV кодоо оруулахад л болно. Картын мэдээллийг дахин оруулах шаардлагагүй болсон.
+		</p>
+
+	<figure>
+  		<img src="images/bogloh_heseg_2.png" alt="schema"  width="380" height="500">
+  		<img src="images/bogloh_heseg_3.png" alt="schema"  width="380" height="500">
+	</figure>
+
+		<br>
+		<p>
+			Мөн логоны доод хэсэгт мерчантын талаар мэдээллийг нэмэлт байдлаар оруулах боломжтой. Анхааруулга, урамшуулал зэргийн талаар мэдээлэл харуулахад ашиглах боломжтой талбарыг шинээр оруулсан.
+		</p>
+
+		<p>
+			Зарим тохиолдолд харилцагчид картын мэдээллээ бөглөж орхиод гүйлгээгээ дуусгалгүй орхих тохиолдол гардаг. Энэ асуудлыг арилгах зорилгоор веб хуудсанд timer оруулж өгсөн. 10 минутын турш гүйлгээгээ дуусгахгүй бол автоматаар гүйлгээ цуцлах болно.
+		</p>
+
+		<p>
+			Төлбөр хийх товч дарснаар интернет нууц код эсвэл интернет токены дугаар оруулах цонх руу шилжинэ.
+		</p>
+
+		<p>
+			Интерет нууц код оруулах цонх:
+		</p>
+		
+
+		<figure>
+  			<img src="images/nuuts_code_tsonh.png" alt="schema"  width="350" height="380">
+		</figure>
+
+
+		<h3> 2. ХОЛБОЛТ ХИЙХ </h3>
+
+		<p>
+			Мерчантын вебээс гүйлгээ хийх хүсэлт бүхий 6 параметрийг манай онлайн худалдааны системийн <a href="https://www.egolomt.mn/billingnew/cardinfo.aspx" class="navbar-link yellow-background"> https://www.egolomt.mn/billingnew/cardinfo.aspx </a> хуудсыг html form ын POST/GET method ашиглан дуудна.
+		</p>
+
+		<table class="table table-bordered">
+			<tr>
+				<th>Илгээх параметр</th>
+				<th>Тайлбар</th>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>1. key_number</strong></td>
+ 		 		<td>Энэ код нь тухайн мерчантыг таних гол түлхүүр юм. Уг кодыг мерчант талаас өөрсдийн гүйлгээ хүлээн авах хуудасны URL болон гүйлгээний мэдээлэл хүлээн авах email хаягаа Голомт
+банкны онлайн төлбөр тооцоо хариуцсан ажилтанд илгээсний дараа key number өгөгдөнө.</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>2.trans_number</strong></td>
+ 		 		<td>Байгууллагаас дамжуулах давхцахгүй гүйлгээний дугаар байна.
+Хамгийн уртдаа 12 оронтой, үсэг тоо холилдсон байж болно.</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>3. trans_amount </strong></td>
+ 		 		<td>Картаас хасалт хийх мөнгөн дүн</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>4. lang_ind</strong></td>
+ 		 		<td>Хэлний сонголт. 0 – Монгол хэл, 1 – English</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>5. customer_id</strong></td>
+ 		 		<td>Хэрэглэгчийн ID. Хэрэглэгчийн картын мэдээллийг хадгалах зориулалттай бөгөөд байнга гүйлгээ хийдэг хэрэглэгчийн хувьд картын мэдээллээ дахин дахин оруулах шаардлагагүй болно.</td>
+ 		 	</tr>
+ 		 	<tr>
+ 		 		<td><strong>6. subID</strong></td>
+ 		 		<td>Буцаах хаяг. Нэг мерчантын хувьд гүйлгээг 3 төрлийн хаяг руу буцах боломжтой. Өөрөөр хэлбэл нэг мерчантыг 3 өөр худалдаанд ашиглах бололцоотой. / Гэхдээ нэг л байгууллагын данстай байна/</td>
+ 		 	</tr>
+		</table>
+
+		<p>
+			Мөн Голомт банкны дараах тестийн хуудсыг ашиглах бололцоотой.<br> <br>
+			<a href="https://www.egolomt.mn/billingnew/test.htm" class="yellow-background">https://www.egolomt.mn/billingnew/test.htm</a>
+		</p>
+
+	<pre>
+	&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt; 
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;form action=" <span class="yellow-background">https://www.egolomt.mn/billingnew/cardinfo.aspx</span>" method="post"&gt;
+			Key Number*:&lt;input name="key_number" type="text" /&gt;&lt;br/&gt;
+			Trans Number*:&lt;input name="trans_number" type="text" /&gt;&lt;br/&gt;
+			Trans Amount*:&lt;input name="trans_amount" type="text" maxlength = "10" /&gt;&lt;br/&gt; 
+			Language*:&lt;input name="lang" maxlength="1" type="text" /&gt;&lt;br/&gt;
+			<span class="yellow-background">CustID:&lt;input name="customer_id" type="text" /&gt;&lt;br/&gt;</span>
+			<span class="yellow-background">subID:&lt;input name="subID" type="text" /&gt;&lt;br/&gt;</span>
+			&lt;input type="submit" value="Submit" /&gt; 
+		&lt;/form&gt;
+	&lt;/body&gt; 
+	&lt;/html&gt;
+	</pre>
+
+	<p>
+		Дээрх хуудас дуудаж, түүн дээр хэрэглэгч картын мэдээллээ бөглөж гүйлгээ хийх товч дарсаны дараа Голомт банкны картын систем дээр гүйлгээ хийгдэж, хэрэглэгчид гүйлгээ амжилттай болсон эсэх талаарх мэдээллийг өгөх хуудсыг доорх параметрүүдийн хамт html form-н GET method-г ашиглан дуудна./ Жич: Гүйлгээ хийгдэх бүрд манай дээр бүртгэгдсэн тухайн байгууллагын email хаягруу email илгээх бөгөөд гүйлгээ амжилттай, амжилтгүй болсон талаарх мэдээллийг тухайн байгууллагын response хүлээж авах хуудасруу илгээдэг./
+	</p>
+
+	<p>
+		Интернэт мерчантын гүйлгээний мэдээлэл авах хуудсыг манай системийн гүйлгээний мэдээлэл боловсруулах хуудас дуудахдаа дамжуулдаг парамертүүд:
+	</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Илгээх параметр</th>
+				<th>Тайлбар</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1. trans_number</td>
+				<td>Байгууллагаас дамжуулах давхцахгүй гүйлгээний дугаарыг хамт илгээнэ.</td>
+			</tr>
+			<tr>
+				<td>2. Success</td>
+				<td>Гүйлгээ амжилттай болсон эсэх талаарх мэдээлэл. 0 – амжилттай, 1- амжилтгүй</td>
+			</tr>
+			<tr>
+				<td><span class="yellow-background">3. Error_code</span></td>
+				<td><span class="yellow-background">Алдааны код</span></td>
+			</tr>
+			<tr>
+				<td><span class="yellow-background">4. Error_desc</span></td>
+				<td><span class="yellow-background">Алдааны тайлбар</span></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+	Жишээ: https://www.merchantsite.com/response.php?success=...&trans_number=...
+	</p>
+		
+		<p>
+			Гүйлгээний мэдээлэл авах майл хаяг болон 2.1 хэсэгт заасан гүйлгээний мэдээлэл боловсруулж хэрэглэгчидэд мэдээлэл өгөх интернэт мерчантын вэб хуудасны URL-аа <a href="mailto:ankhbayar_e@golomtbank.com">ankhbayar_e@golomtbank.com</a> хаягруу явуулна уу. Энэ мэдээлэл ирсэний дараа бид 2.1 хэсэгт ашиглагдах key_number –н нууц дугаарыг илгээнэ.
+		</p>
+
+		<br>
+		<h3> 3. БАТАЛГААЖУУЛАЛТ ХИЙХ </h3>
+		<p>
+			SOAP-г ашигласнаараа хийгдсэн гүйлгээ бүрийг тухай бүрд нь дахин давхар шалгах боломжтой. Ингэснээрээ хэрэглэгч гүйлгээ хийх явцад сүлжээ тасалдах болон ямар нэгэн асуудал гарсан тохиолдолд дахин SOAP-руу хандан гүйлгээг баталгаажуулах боломжтой. Мөн луйврийн гүйлгээ зэрэг эрсдлүүдээс сэрэмжлэх боломжтой.
+		</p>
+
+		<p>
+			SOAP ашиглахад манайхруу дамжуулах шаардлагатай параметрүүд:
+		</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Илгээх параметр</th>
+				<th>Тайлбар</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1. user_id</td>
+				<td>2-р майлээр мерчантруу явуулах болно. <a href="https://www.egolomt.mn/old/mSignin.aspx">https://www.egolomt.mn/old/mSignin.aspx</a> - хаяг дээр гүйлгээгээ шалгадаг хэрэглэгчийн нэр</td>
+			</tr>
+			<tr>
+				<td>2. password</td>
+				<td>2-р майлээр мерчантруу явуулах болно. <a href="https://www.egolomt.mn/old/mSignin.aspx">https://www.egolomt.mn/old/mSignin.aspx</a> - хаяг дээр гүйлгээгээ шалгадаг хэрэглэгчийн нууц үг</td>
+			</tr>
+			<tr>
+				<td>3. trans_number</td>
+				<td>Онлайн гүйлгээний давтагдахгүй дугаар</td>
+			</tr>
+			<tr>
+				<td>4. ognoo</td>
+				<td>Тухайн гүйлгээ хийсэн огноо. Дараах форматтай байна. /YYYYMMDD - > 20070923/</td>
+			</tr>
+			<tr>
+				<td>5. amount</td>
+				<td>Тухайн гүйлгээний дүн. Дараах форматтай байна. /2500 хэрэв бутархай тоо явуулбал 2500.35 гэх байдлаар цэг ашиглана./</td>
+			</tr>
+		</tbody>
+	</table>
+		<p>
+			SOAP шалгалт явагдсаны дараа манайхаас мерчантруу илгээх утга:
+		</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Манайхаас илгээх утгууд</th>
+				<th>Тайлбар</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>6 оронтой тоо</td>
+				<td>Гүйлгээ амжилттай болсон. 6 оронтой дурын тоо байна.</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Гүйлгээ амжилтгүй болсон. Энэ тохиолдолд хэрэглэгчийн картын мэдээлэл бууруу, эсвэл үлдэгдэл хүрэхгүй байх тохиолдлуудад</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Login буруу. Тохиолдолд user_id, password-оо шалгах хэрэгтэй</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>SOAP-руу дамжуулах утгууд буруу илгээгдсэн. Жишээ: ognoo формат буруу байх , amount хоосон илгээх, буруу amount илгээх, зэрэг тохиолдлууд.</td>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>Өмнө нь хийгдэж байгаагүй гүйлгээ. Гүйлгээний дугаар буруу явах эсвэл өмнө нь ийм дугаартай гүйлгээ хийгдэж байгаагүй тохиолдолд</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		Дээрх soap client function-г манай талаас танай response хуудсыг дуудахад гүйлгээний мэдээллээ шалгаад доор нь давхар дуудах байдлаар гүйлгээгээ баталгаажуулна уу!
+	</p>
+
+	<p>
+		SOAP сервэрлүү хандах PHP код:
+	</p>
+
+	<pre>
+	&lt;?php echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n" ?&gt;<br>
+	&lt;?php
+	$client = new SoapClient("http://www.egolomt.mn:7070/persistence.asmx?WSDL"); <br>
+	echo($client- &gt;Get_new(array('v0'=&gt;"user_id",'v1'=&gt;"password",'v2'=&gt;"trans_number",'v3'=&gt;"ognoo",'v4' =&gt;"trans_amount"))-&gt;Get_newResult); <br>
+	?&gt;
+	</pre>
+	
+
+		<p>
+			<blockquote>
+				<small><strong>Тайлбар </strong>: Голомт банкны SOAP серверлүү хандахдаа тухайн мерчантын вэб байрласан сервэрийн 7070 порт нээлттэй байх ёстой. Мөн php эсвэл ашиглаж байгаа програмчлалын хэл soap дэмждэг байх шаардлагатай.</small>
+			</blockquote>
+		</p>
+
+		<p>
+			SOAP ашиглах PHP жишээ код:
+		</p>
+
+	<pre>
+	&lt;?php
+		//doorh jishee ni soap herhen ashiglah talaar hiisen jishee bolno uuniig ashiglan site
+	deeree tavihdaa uursdiin code nemj oruulna uu
+	$success = $_GET['success']; //formiin get argaar utgaa avna
+	$trans_number = $_GET['trans_number']; //formiin get argaar utgaa avna
+		$Usernamesoap = ""; //golomtoos uguh merchantiin code
+		$Passwordsoap = ""; //golomtoos uguh nuuts dugaar
+		$trans_date = "";  // guilgee hiisen ognoo. ta ene ognogoo uuriin baazaas $trans_number huvisagchiin utgaaraa shuuj avah yum
+		$trans_amount = ""; // guilgeenii dun. ta ene ognogoo uuriin baazaas $trans_number huvisagchiin utgaaraa shuuj avah yum 
+		require_once('nusoap/nusoap.php');
+		$wsdl = "http://www.egolomt.mn:7070/persistence.asmx?WSDL"; 
+		$client = new nusoap_client($wsdl, 'wsdl');
+		$client_err = $client-&gt;getError();
+		if ($client_err) {
+			echo '&lt;h2&gt;Error&lt;/h2&gt;&lt;pre&gt;' . htmlspecialchars($client-&gt;getDebug(), ENT_QUOTES) . '&lt;/pre&gt;';
+			exit(); 
+		}
+		$client-&gt;soap_defencoding = 'UTF-8'; 
+		$params = array(
+			'v0'=>$Usernamesoap, 
+			'v1'=>$Passwordsoap, 
+			'v2'=>$trans_number, 
+			'v3'=>$trans_date, 
+			'v4'=>$trans_amount
+		);
+		$result = $client-&gt;call('Get_new', $params,'', '', false, true);
+		if ($client-&gt;fault) {
+			echo '&lt;h2&gt;Error&lt;/h2&gt;&lt;pre&gt;'; print_r($result); echo '&lt;/pre&gt;';
+		} else {
+			$client_err = $client-&gt;getError(); 
+			if ($client_err) {
+				echo '&lt;h2&gt;Error&lt;/h2&gt;&lt;pre&gt;' . $client_err . '&lt;/pre&gt;'; 
+			} else {
+				$responseCode = $result[Get_newResult]; 
+			}
+		}
+		if (strlen($responseCode) == 6) 
+		{
+			if($success == 0) {
+				//2 davhar shalgataar guilgee amjilttai bolson ued tanai web site uilchilgeegee uzuuleh bolomjtoi yum
+				echo "Guilgee amjilttai bolson baina."; 
+			}
+		} 
+		else 
+		{
+		//doorh medeelel ni zuvhun tanai logod bichegdej uldeh yestoi! 
+		//if($responseCode == 2) { write_to_log("Guilgee amjiltgui bolson baina."); } 
+		//if($responseCode == 0) { write_to_log("Iim dugaar bolon guilgeenii duntei guilgee baazad burtgegdeegui baina."); }
+		//if($responseCode == 3) { write_to_log("Hereglegchiin ner esvel nuuts ug buruu baina."); }
+			echo "Tanii guilgee hiigdsengui ta kartiin medeelel bolon uldegdelee shalgaad dahin oroldon uu!";
+		} 
+	?&gt;
+	</pre>
+
+
+	<br>
+	<h3> 4. ГОЛОМТ БАНКНЫ ЗҮГЭЭС ТАВИХ ШААРДЛАГА </h3>
+	<p>
+		<ul>
+			<li> Интернэт худалдааны сайтыг SSL тэй болгох <br></li>
+			<li>Интернэт мерчантын гүйлгээний мэдээлэл хүлээж авах хуудас гүйлгээний
+	мэдээлэл нь /trans_number, success/ Голомт банкны URL-с ирж байна гэдгийг
+	албан ёсоор шалгадах байх. <br></li>
+			<li>Холболтын тест амжилттай болсоны дараа нууцлалыг сайжруулах үүднээс
+	нэмэлт боломжийг вэб дээрээ суурьлуулж өгөх хэрэгтэй /Уг нууцлал нь
+	интернэт худалдааны вэбүүдэд заавал шаардагдана/ <br></li>
+			<li>Голомт банкны онлайн төлбөр тооцооны системийн нууцлалын хүрээнд
+	тухайн мерчантын гүйлгээ, манай системд амжилттай хийгдсэн эсвэл амжилтгүй болсон талаарх мэдээллийг өгөх SOAP вэб сервис ашигладаг. Танай байгуулага уг боломжийг/давхар шалгах/ гүйлгээ хийж байгаа программын манай талаас мэдээ хүлээж авах хуудсан дээр оруулж өгнө үү. <br></li>
+		</ul>
+	</p>
+
+
+	<br>
+	<h3> 5. ДАВУУ ТАЛ </h3>
+	<p>  
+		<ul>
+			<li>Хариу өгөх хугацаа богино. Гүйлгээний боловсруулалтын сервисийг шинээр зохион байгуулж хурдан болгосон. <br></li>
+			<li>Хэрэглээ хялбар. Харилцагчийн хувьд зөвхөн гүйлгээ хийх картын мэдээллийг л оруулах болно. Өөр мэдээлэл бөглөх шаардлагагүй. Мерчантын хувьд манай онлайн худалдааны сайтыг frame байдлаар өөрсдийн вебийн аль нэг хэсэгт дуудах болоомжтой.<br></li> 
+			<li>Алдааны тайлбар илгээнэ. Одоо байгаа хувилбарын хувьд амжилтгүй болсон гүйлгээний талаар ямар нэгэн тайлбар илгээдэггүй байгаа. Шинэ хувилбар алдааны код болон алдааны тайлбарыг илгээдэг болсон.<br></li> 
+			<li>Харилцагчийн картын мэдээллийг хадгалана. Онлайнаар гүйлгээ хийж буй харилцагч олон мэдээлэл бөглөх шаардлагагүй болно. Байнга гүйлгээ хийдэг харилцагчийн мэдээллийг хадгалсанаар картын дугаар дуусах хугацааг дахин дахин оруулах шаардлагагүй болсон.<br></li>  
+		</ul>
+	</p>
+	<br><br><br><br><br><br><br>
+
+	</div>
+
+
