@@ -1,0 +1,15 @@
+pre {
+	-moz-tab-size:    4;
+ 	-o-tab-size:      4;
+ 	-webkit-tab-size: 4;
+ 	-ms-tab-size:     4;
+ 	tab-size:         4;
+}
+
+.yellow-background {
+	background-color: yellow;
+}
+
+th {
+	background-color: DarkSeaGreen ;
+}
