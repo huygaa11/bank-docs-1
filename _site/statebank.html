@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>  Банкны гарын авлагууд </title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/golomt.css">
+</head>
+<body>
+	<div class="container">
+
+        <div class="row">
+            <div class="col-xs-10 col-sm-10 col-md-10">
+                <br>
+                <h4 id="section-0"> ХАДГАЛАМЖ БАНК </h4>
+
+                <h2> Мерчантаар тест дээр гүйлгээ хийж солилцох формат </h2><br>
+
+                <p>
+                    <a href="http://202.131.225.149:2233/Exec">http://202.131.225.149:2233/Exec</a> <br>
+                    Энэ хаягаар тест серверлүү xml post-p шидэж тестэлж шалгана. Доорх форматын дагуу xml файл үүсгэн пост-р шидэж гүйлгээ хийнэ.
+                </p>
+               
+
+                <h3 id="section-1">1. Create Order <small>(Захиалга xml дээр үүсгэн постоор шидэх үеийн формат)</small></h3>
+                <p>
+                    The request is posted from the Internet shop server to <a href="http://202.131.225.149:2233/Exec">http://202.131.225.149:2233/Exec</a> (without the customer Browser) via HTTPS (POST method).
+                </p>
+
+                <p>
+                    Message format:
+
+    <pre>
+    &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;
+    &lt;TKKPG&gt;
+    &lt;Request&gt;
+    &lt;Operation&gt;CreateOrder&lt;/Operation&gt;
+    &lt;Language&gt;EN&lt;/Language&gt;
+    &lt;Order&gt;
+    &lt;Merchant&gt;TESTECOM&lt;/Merchant&gt; 
+    &lt;Amount&gt;12300&lt;/Amount&gt; 
+    &lt;Currency&gt;496&lt;/Currency&gt; 
+    &lt;Description&gt;TextOrderDescription&lt;/Description&gt; 
+    &lt;ApproveURL&gt;ApprovalURL&lt;/ApproveURL&gt; 
+    &lt;CancelURL&gt;CancelURL&lt;/CancelURL&gt; 
+    &lt;DeclineURL&gt;DeclineURL&lt;/DeclineURL&gt; 
+    &lt;/Order&gt;
+    &lt;/Request&gt;
+    &lt;/TKKPG&gt;
+    </pre>
+
+                </p>
+
+                <p>
+                &lt;Merchant&gt;TESTECOM&lt;/Merchant&gt; Тест дээр хийж байгаа тул Merchant нь TESTECOM тогтмол байна. Харин жинхэнэ сервэр дээр манайхаас тусгай Merchant ID өгнө тест дууссаны дараа.
+                </p>
+
+                <p>
+                    &lt;Amount&gt;12300&lt;/Amount&gt;Худалдаа хийх мөнгөн дүн Энэ тохиолдолд 123.00 төг <br>
+                    &lt;Currency&gt;496&lt;/Currency&gt; Мөнгөн дүн тогтмол 496 нь Төгрөгөөр гүйлгээ хийнэ. 
+                </p>
+                
+                <p>
+                    <strong>Description</strong> - Order text description. It is displayed to the customer during payment <br>
+                    <strong>ApproveURL</strong> - URL to forward the customer to if the operation is approved<br>
+                    <strong>CancelURL</strong> - URL to forward the customer to if the operation is canceled (on clicking the Cancel button)<br>
+                    <strong>DeclineURL</strong> -URL to forward the customer to in case of the unsuccessful payment<br> <br>
+                </p>
+             
+              
+
+                <h3 id="section-2"> 2. Savings response <small>("Хадгаламж" банкнаас ирэх хариулт):</small> </h3>
+    <pre>
+    &lt;?xml version=”1.0” encoding=”UTF-8”?&gt; 
+    &lt;TKKPG&gt;
+    &lt;Response&gt; 
+    &lt;Operation&gt;CreateOrder&lt;/Operation&gt; 
+    &lt;Status&gt;NN&lt;/Status&gt;
+    &lt;Order&gt; 
+    &lt;OrderID&gt;OrderID&lt;/OrderID&gt; 
+    &lt;SessionID&gt;SessionID&lt;/SessionID&gt; 
+    &lt;URL&gt;PayGateURL&lt;/URL&gt; 
+    &lt;/Order&gt;
+    &lt;/Response&gt;
+    </pre>
+
+                <p>
+                    Status - Request execution result: <br>
+                    <strong>00</strong> – successfully <br>
+                    <strong>30</strong> – message invalid format (no mandatory fields and etc.) <br>
+                    <strong>10</strong> – Internet shop has no access to the Create Order operation (or the Internet shop is not registered) <br>
+                    <strong>54</strong> – invalid operation <br>
+                    <strong>96</strong> – system error <br>
+                    <strong>OrderID</strong> - Defines the order unique number to be referred to by the Internet shop server (available only if the Status field = 00) <br>
+                    <strong>SessionID</strong> - Session identifier. It is a one-time password used together with the order number to initiate payment, get order status, etc. (available only if the <em><strong>Status</strong></em> field = 00) <br>
+                    <strong>URL</strong> - URL to which the Internet shop server goes to in order to initiate the customer interaction. It is done through the GET to URL method defined in the response. At that, the <em><strong>SESSIONID</strong></em> and <em><strong>ORDERID</strong></em> parameters taking on the values of the session identifier and the order number respectively are added. 
+                </p>
+
+                <p>
+                Example : <br>
+                <a href="https://ecom.savingsbank.mn/index.jsp?ORDERID=199999&SESSIONID=F26C1C280BFAB9828456573AB9BCEB49">https://ecom.savingsbank.mn/index.jsp?ORDERID=199999&SESSIONID=F26C1C280BFAB9828456573AB9BCEB49</a> <br>
+                ￼￼Available only if the <em><strong>Status</strong></em> field = 00 
+                </p>
+￼
+                <h3 id="section-3">3. Буцаад шалгахдаа :</h3>
+                <p>
+                The request is posted from the Internet shop server to <a href="http://202.131.225.149:2233/Exec">http://202.131.225.149:2233/Exec</a> (without the customer Browser) via HTTPS (POST method).
+                </p>
+
+                Message format:
+    <pre>
+    &lt;?xml version=”1.0” encoding=”UTF-8”?&gt;
+    &lt;TKKPG&gt;
+    &lt;Request&gt;
+    &lt;Operation&gt;GetOrderStatus&lt;/Operation&gt;
+    &lt;Language&gt;EN&lt;/Language&gt;
+    &lt;Order&gt;
+    &lt;Merchant&gt; TESTECOM &lt;/Merchant&gt;
+    &lt;OrderID&gt;OrderID&lt;/OrderID&gt;
+    &lt;/Order&gt;
+    &lt;SessionID&gt;SessionID&lt;/SessionID&gt;
+    &lt;/Request&gt;
+    &lt;/TKKPG&gt;
+    </pre>
+
+                Savings response:
+    <pre>
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+    &lt;TKKPG&gt;
+    &lt;Response&gt; 
+    &lt;Operation&gt;GetOrderStatus&lt;/Operation&gt; 
+    &lt;Status&gt;NN&lt;/Status&gt;
+    &lt;Order&gt;
+    &lt;OrderID&gt;
+    OrderID&lt;/OrderID&gt; 
+    &lt;OrderStatus&gt;STATUS&lt;/OrderStatus&gt; 
+    &lt;/Order&gt;
+    &lt;AdditionalInfo&gt; 
+    &lt;Receipt&gt;BASE64-encode-info&lt;/Receipt&gt; 
+    &lt;/AdditionalInfo&gt;
+    &lt;/Response&gt;
+    &lt;/TKKPG&gt;
+    </pre>
+
+                <p>
+                ￼￼Response fields definition: <br>
+                ￼Field Mandatory Description<br>
+
+                <strong>Status</strong> - Request execution result:<br>
+                <strong>00</strong> – successfully<br>
+                <strong>30</strong> – message invalid format (no mandatory fields andetc.)<br>
+                <strong>10</strong> – Internet shop has no access to the Create Order operation (or the Internet shop is not registered)<br>
+                <strong>54</strong> – invalid operation<br>
+                <strong>96</strong> – system error<br>
+                <strong>OrderID</strong> - Order identifier on which status is requested. Available only if the <em><strong>Status</strong></em> field = 00<br>
+
+                <strong>OrderStatus</strong> - Order status:
+                <ul>
+                    <li>CREATED</li>
+                    <li>ON-PAYMENT</li>
+                    <li>APPROVED</li>
+                    <li>CANCELED</li>
+                    <li>DECLINED</li>
+                    <li>REVERSED</li>
+                    <li>REFUNDED</li>
+                    <li>ERROR - error (order is in the error state) Available only if the <em><strong>Status</strong></em> field = 00 </li>
+                </ul>
+
+                <strong>AdditionalInfo</strong> - Additional information on the order<br>
+                <strong>Receipt</strong> - Signed receipt (bank guarantee) approving the fact of authorization (BASE64-encoded) (for the format description, see Section Signed ReceiptFormat).
+                </p>
+
+                <h3 id="section-4"> 4.Signed Receipt Format </h3>
+                <p>
+                    The signed receipt generation mode must be enabled/disabled for a definite shop. <br>
+                    Receipt format:
+                </p>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Format</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Format</td>
+                            <td>version</td>
+                            <td>N4 ‘0001’</td>
+                        </tr>
+                        <tr>
+                            <td>Payment gateway order ID</td>
+                            <td>N16</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Transaction date and time</td>
+                            <td>DDMMYYYYHH24MISS</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Operation code</td>
+                            <td>N2</td>
+                            <td>‘00’ – payment</td>
+                        </tr>
+                        <tr>
+                            <td>Authorization amount</td>
+                            <td>N12</td>
+                            <td>In the currency min values</td>
+                        </tr>
+                        <tr>
+                            <td>Authorization currency</td>
+                            <td>N3</td>
+                            <td>Authorization currency code</td>
+                        </tr>
+                        <tr>
+                            <td>Issuer authorization code</td>
+                            <td>ANS6</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Order description</td>
+                            <td>ANS64</td>
+                            <td>Order text description (if the length of the order description exceeds 64 chars, it is truncated)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    A receipt is signed by "Crypto-Pro CSP" ISEM (Information Security Encryption Means) (PKCS7/CMS), at that, it is saved to RKCS7 certificate container, converted to BASE64 format and inserted in the XML-element of Operation.Order.AdditionalInfo.Receipt. The particular receipt is generated only for the authorization and refund operations.
+                </p>
+                <br><br><br><br><br><br><br>
+
+            </div> <!--column-->
+
+             <div class="col-xs-2 col-sm-2 col-md-2">
+                <ul id="nav-static-side-bar" class="nav nav-pills nav-stacked">
+                    <li><a href="#section-1">1. ЗАХИАЛГА ҮҮСГЭХ</a></li>
+                    <li><a href="#section-2">2. ИРЭХ ХАРИУЛТ</a></li>
+                    <li><a href="#section-3">3. БУЦААД ШАЛГАХДАА</a></li>
+                    <li><a href="#section-4">4. БАТАЛГААЖСАН БАРИМТ</a></li>
+                </ul>
+            </div>
+
+        </div> <!--row-->
+
+
+
+
+	</div>
+</body>
+</html>
+
